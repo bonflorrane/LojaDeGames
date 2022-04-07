@@ -30,8 +30,13 @@ public class Game {
 	private String pagamento;
 	
 	@ManyToOne // cria a chave estrangeira
-	@JsonIgnoreProperties("categoria")
+	@JsonIgnoreProperties("game")
 	private Categoria categoria;
+	
+	@ManyToOne // cria a chave estrangeira
+	@JsonIgnoreProperties("game")
+	private Usuario usuario;
+	
 
 	public Long getId() {
 		return id;
@@ -81,7 +86,14 @@ public class Game {
 		this.categoria = categoria;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
 
-	
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+
 	
 }
